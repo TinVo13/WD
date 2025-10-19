@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 - Thu Huyền</title>
+    
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* BASE & ANIMATION */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Quicksand', sans-serif; /* Font phụ hiện đại */
+            background: linear-gradient(135deg, #fce4ec 0%, #f48fb1 100%); /* Nền chuyển màu hồng nhạt, dịu mắt hơn */
+            color: #4a235a;
+            overflow-x: hidden;
+        }
+
+        /* CARD/THIỆP STYLE */
+        .container {
+            text-align: center;
+            background: #ffffff; /* Nền trắng tinh khôi của thiệp */
+            padding: 50px 40px;
+            border-radius: 15px; /* Góc bo nhẹ nhàng */
+            border: 5px solid #ffab91; /* Viền thiệp màu san hô nhẹ nhàng */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(255, 255, 255, 0.5); /* Hiệu ứng thiệp nổi + viền ngoài mờ */
+            max-width: 90%;
+            width: 550px;
+            box-sizing: border-box;
+            transform: scale(0.8);
+            opacity: 0;
+            animation: fadeInScale 1.2s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* TEXT STYLES */
+        h1 {
+            font-family: 'Pacifico', cursive; /* Tiêu đề chính dùng Pacifico */
+            font-size: 3em;
+            color: #d81b60; /* Màu hồng đậm hơn */
+            margin-bottom: 5px;
+            animation: colorChange 4s infinite alternate;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            line-height: 1.2;
+        }
+
+        @keyframes colorChange {
+            0% { color: #d81b60; }
+            50% { color: #8e24aa; }
+            100% { color: #d81b60; }
+        }
+
+        h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600; /* Hơi đậm */
+            font-size: 1.6em;
+            color: #4a148c;
+            margin-top: 5px;
+            margin-bottom: 25px;
+            border-bottom: 2px dashed #ffab91; /* Gạch dưới đứt nét */
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 400; /* Mặc định */
+            font-size: 1.15em;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #38006b;
+        }
+
+        .name-highlight {
+            font-family: 'Pacifico', cursive;
+            font-weight: normal;
+            color: #e91e63;
+            font-size: 1.4em;
+            display: inline-block;
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bounce effect */
+        }
+
+        .name-highlight:hover {
+            transform: scale(1.2) rotate(3deg);
+        }
+
+        /* MEDIA QUERIES (RESPONSIVE) */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                border-width: 3px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 0 5px rgba(255, 255, 255, 0.5);
+            }
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.4em; }
+            p { font-size: 1em; }
+            .name-highlight { font-size: 1.3em; }
+        }
+
+        /* CONFETTI & GOAT ANIMATION - Giữ nguyên logic cũ */
+        .falling-elements-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .falling-element {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0;
+            animation: fall 5s linear infinite;
+        }
+
+        .confetti {
+            width: 10px;
+            height: 10px;
+        }
+
+        .confetti.color1 { background-color: #ffcc80; }
+        .confetti.color2 { background-color: #ef9a9a; }
+        .confetti.color3 { background-color: #c5e1a5; }
+        .confetti.color4 { background-color: #80deea; }
+
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="falling-elements-container" id="falling-layer"></div>
+
+    <div class="container">
+        <h1>💐 Chúc Mừng Ngày 20/10 💐</h1>
+        <h2>Gửi tới Người Phụ Nữ Việt Nam Tuyệt Vời!</h2>
+        <p>
+            Nhân ngày đặc biệt này, xin gửi những lời chúc tốt đẹp và chân thành nhất đến
+            <span class="name-highlight">Thu Huyền</span>!
+        </p>
+        <p>
+            Chúc cô luôn xinh đẹp, rạng rỡ, thành công và ngập tràn niềm vui.
+            Mỗi ngày của cô đều là một bản tình ca rực rỡ, tràn đầy yêu thương và hy vọng!
+        </p>
+        <p style="font-style: italic; color: #d81b60; margin-top: 30px; font-family: 'Quicksand', sans-serif; font-weight: 600;">
+            "Chúc cô sớm có được tui hẹ hẹ hẹ"
+        </p>
+        <div style="font-size: 2em; margin-top: 20px;">💖👑🌹</div>
+    </div>
+
+    <script>
+        const totalElements = 60;
+        const goatCount = 10;
+        const fallingLayer = document.getElementById('falling-layer');
+        const colors = ['#ffcc80', '#ef9a9a', '#c5e1a5', '#80deea'];
+
+        for (let i = 0; i < totalElements; i++) {
+            const element = document.createElement('div');
+            element.classList.add('falling-element');
+
+            if (i < goatCount) {
+                element.textContent = '🐐';
+                element.style.fontSize = Math.random() * 15 + 20 + 'px';
+            } else {
+                element.classList.add('confetti');
+                element.classList.add('color' + (Math.floor(Math.random() * colors.length) + 1));
+                const size = Math.random() * 8 + 5;
+                element.style.width = size + 'px';
+                element.style.height = size + 'px';
+                element.style.borderRadius = '50%';
+            }
+
+            element.style.left = Math.random() * 100 + 'vw';
+            element.style.animationDelay = Math.random() * 5 + 's';
+            element.style.animationDuration = Math.random() * 3 + 5 + 's';
+
+            fallingLayer.appendChild(element);
+        }
+
+        // Tạo hiệu ứng tương tác cho tên (Hover/Touch)
+        const nameElement = document.querySelector('.name-highlight');
+
+        const handleInteraction = (scale, rotate) => {
+            nameElement.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
+        };
+
+        nameElement.addEventListener('mouseover', () => handleInteraction(1.2, 3));
+        nameElement.addEventListener('mouseout', () => handleInteraction(1, 0));
+        
+        // Hỗ trợ chạm trên di động
+        nameElement.addEventListener('touchstart', (e) => {
+            e.preventDefault(); 
+            handleInteraction(1.2, 3);
+        });
+        
+        nameElement.addEventListener('touchend', () => handleInteraction(1, 0));
+        nameElement.addEventListener('touchcancel', () => handleInteraction(1, 0));
+    </script>
+</body>
+</html>
